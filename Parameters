@@ -1,0 +1,42 @@
+def greet(name: str) -> None:
+    """Print a personalized greeting message"""
+    print(f"Hello, {name}!")
+
+def add_numbers(a: int, b: int) -> int:
+    """Return the sum of two numbers"""
+    return a + b
+
+def modify_list(my_list: list) -> None:
+    """Modify the original list by appending a new element"""
+    my_list.append("New element!")
+
+def swap_values(a: int, b: int) -> tuple:
+    """Swap the values of two variables and return them as a tuple"""
+    return b, a
+
+# Demonstrate passing parameters by value
+x = 5
+y = 10
+result = add_numbers(x, y)
+print(f"The sum of {x} and {y} is {result}")
+
+# Demonstrate passing parameters by reference
+my_list = [1, 2, 3]
+print("Original list:", my_list)
+modify_list(my_list)
+print("Modified list:", my_list)
+
+# Demonstrate passing parameters by reference and swapping values
+a = 10
+b = 20
+print("Before swap:", a, b)
+a, b = swap_values(a, b)
+print("After swap:", a, b)
+
+# Demonstrate passing a variable number of arguments
+def greet_multiple(*names: str) -> None:
+    """Print a personalized greeting message for multiple names"""
+    for name in names:
+        print(f"Hello, {name}!")
+
+greet_multiple("John", "Jane", "Bob")
